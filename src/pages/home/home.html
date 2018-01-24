@@ -1,21 +1,31 @@
 <ion-header>
   <ion-navbar color="danger">
-    <ion-title>Home1</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic2232!</h2>
+  <h3>Ionic Menu Starter test</h3>
+
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.<br>
-    <a href="src/pages/about/about.html">About</a><br><br>
-    
-     <button ion-button (click)="showBanner()">Show Banner</button>
-      
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+  <button ion-button secondary menuToggle>Toggle Menu</button><br>
+  <ion-item>
+    <ion-input type="text" placeholder="Input1" id="inp1" [(ngModel)]="inp1" ></ion-input>
+  </ion-item>
+ <br>
+   <ion-item>
+    <ion-input type="text" placeholder="Input2" id="inp2" [(ngModel)]="inp2" ></ion-input>
+  </ion-item>
+  <br>
+  <button ion-button block color="dark" (click)="doAlert()">Show Basic Alert</button>
+  
 </ion-content>

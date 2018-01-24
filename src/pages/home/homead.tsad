@@ -1,0 +1,29 @@
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
+
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})
+export class HomePage {
+
+  constructor(private adMobFree: AdMobFree) {
+    this.showBannerAd();
+  }
+
+  async showBannerAd() {
+    try {
+      const bannerConfig: AdMobFreeBannerConfig = {
+        //id: 'your-banner-id-here',
+        isTesting: true,
+        autoShow: true
+      }
+
+      this.adMobFree.banner.config(bannerConfig);
+
+      const result = await this.adMobFree.banner.prepare();
+      console.log(result);
+    }
+    catch (e) {
+      console.error(e);
+    }
+  }
